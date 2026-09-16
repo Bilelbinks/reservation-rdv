@@ -1,5 +1,9 @@
 # Prise de rendez-vous en ligne
 
+**Démo en ligne : [rdv-bby.infinityfreeapp.com](https://rdv-bby.infinityfreeapp.com/)**
+(espace admin : `admin` / `admin1234` — identifiants de démo, à ne pas
+utiliser tel quel en production)
+
 Application web PHP + MySQL pour prendre rendez-vous (coiffeur, coach,
 médecin...) : choix d'un service, d'une date, affichage des créneaux
 réellement disponibles, et un espace admin pour gérer les rendez-vous et
@@ -46,6 +50,15 @@ est possible.
 mysql -u root < sql/schema.sql
 ```
 3. Démarre WampServer, ouvre `http://localhost/reservation-rdv/`
+
+## Déploiement
+
+La démo tourne sur [InfinityFree](https://infinityfree.net) (hébergement PHP
++ MySQL gratuit) : fichiers envoyés en FTP, schéma importé via phpMyAdmin
+(sans `CREATE DATABASE`/`USE`), `config.php` de production adapté aux
+identifiants fournis par l'hébergeur — ce fichier n'est pas versionné ici,
+seul le `config.php` de dev local (`root` sans mot de passe) est dans ce
+dépôt.
 
 ## Structure du projet
 
